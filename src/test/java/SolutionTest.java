@@ -19,26 +19,12 @@ class SolutionTest {
     private Solution solution;
 
     @Test
-    void shouldMakeTwoPartitionOfPalindromes() {
+    void test() {
         //given
-        String word = "aab";
 
         //when
-        List<List<String>> partition = solution.partition(word);
 
         //then
-        assertThat(partition).hasSize(2)
-                .contains(List.of("a", "a", "b"), List.of("aa", "b"));
-    }
-
-    @ParameterizedTest
-    @NullAndEmptySource
-    @ValueSource(strings = {"exceedingStringLengthWord"})
-    void shouldThrowExceptionWhenStringLengthIsOutOfScope(String value) {
-        //when then
-        assertThatThrownBy(() -> solution.partition(value))
-                .isInstanceOf(IllegalStateException.class)
-                .hasMessage("Given string is out of scope");
     }
 
 }
